@@ -1,0 +1,29 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Web Site</title>
+</head>
+
+<body>
+    <header>
+        <h1>Web Site</h1>
+    </header>
+    <nav>
+        <form method="POST" action="cambiar_idioma.php" id="frm_idioma">
+            <label for="lang">Elija su idioma / choose your language:</label>
+            <select id="lang" name="idioma">
+                <option value="esp">Español</option>
+                <option value="en">English</option>
+            </select>
+            <input type="submit" value="OK" />
+        </form>
+    </nav>
+    <article>
+        {PAGINA}
+        <!--
+            Aquí se reemplazará el contenido por el del archivo hola_es.html
+            u hola_en.html según el idioma elegido por el usuario
+        -->
+    </article>
+</body>
+
+</html>

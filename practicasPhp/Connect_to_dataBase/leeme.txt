@@ -1,0 +1,22 @@
+AVISO:
+PHP cuenta con dos tipos de conectores MySQL: mysql y
+mysqli, disponible desde la versión 5. Si bien mysqli y más
+potente, seguro y estable que mysql, en este capítulo,
+veremos como utilizar ambos.
+
+MySQL desde PHP con el conector
+mysql
+Veremos como utilizar el conector mysql, a solo efecto
+educativo, pero para nuestras aplicaciones, utilizaremos
+mysqli.
+
+Para trabajar con bases de datos desde PHP con el conector
+mysql, el procedimiento, consiste en los siguientes pasos:
+1. Conectarse a la base de datos
+2. Seleccionar la base de datos a utilizar
+3. Ejecutar una consulta
+4. Capturar los resultados
+5. Liberar los resultados
+6. Cerrar la conexión
+
+COMENZAREMOS LA PRACTICA DENTRO DEL ARCHIVO "connection_with_msql.php"
