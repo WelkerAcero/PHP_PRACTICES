@@ -28,7 +28,7 @@ class StatusController{
 
     public function __destruct()
     {
-        unset($GLOBALS["{$this}"]);
+        unset($this->model);
     }
 
 }

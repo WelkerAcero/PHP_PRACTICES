@@ -1,5 +1,5 @@
 <?php
-require_once('StatusController');
+require_once('StatusController.php');
 
 echo '<h1>CRUD con MVC de la tabla Status <h1>';
 

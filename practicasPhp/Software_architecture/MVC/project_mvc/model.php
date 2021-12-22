@@ -6,8 +6,10 @@ abstract class Model{
     private static $db_user = "root";
     private static $db_pass = "";
     protected $db_name = '';
+
     private static $db_charset = 'utf8';
     private $conn;
+
     protected $query;
     protected $rows = array();
 
@@ -58,7 +60,7 @@ abstract class Model{
 
         $this->db_close();
 
-         // In this part 'array_pop' is used for delete de last position which is NULL
+        // In this part 'array_pop' is used for delete de last position which is NULL
         return array_pop($this->rows); 
     }
 

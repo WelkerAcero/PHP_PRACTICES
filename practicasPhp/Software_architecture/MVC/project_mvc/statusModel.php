@@ -66,7 +66,7 @@ class StatusModel extends Model{
 
     public function __destruct()
     {
-        unset($GLOBALS["{$this}"]);
+        /* unset($this); */
     }
 
 
