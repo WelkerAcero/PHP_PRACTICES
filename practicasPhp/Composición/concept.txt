@@ -1,0 +1,14 @@
+Composición:
+Algunos objetos se
+componen de las propiedades de otro (lo cual, no significa que
+las hereden, sino simplemente eso: “se componen de”).
+
+Cuando la propiedad de un objeto, se compone de las
+características de otro objeto, dicha propiedad se transforma
+en una especie de “propiedad-objeto”. Es decir, que el tipo de
+datos de esta propiedad, pasa a ser de tipo objeto. Esto
+significa, que dicha propiedad, estará formada por subpropiedades.
+
+Para lograrlo, debemos recurrir a la composición. Una técnica
+que en PHP, se logra creando un método que asigne a dicha
+propiedad, el objeto correspondiente, pasado como parámetro

@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /practicasPhp/Software_architecture/Develping_MVC_Framework/
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+Rewrite ^(.*) index.php?r=$1 [L]

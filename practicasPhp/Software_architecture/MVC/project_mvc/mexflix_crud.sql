@@ -47,7 +47,11 @@
 	UPDATE status SET status = 'Other Status' WHERE status_id = 6;
 
 	/*Salvar status*/
+	/* This will check if already exist the values on the ID 
+	passed through. If exist so this will change to UPDATE values
+	if it isn't this will create as a INSERT INTO does */
 	REPLACE INTO status (status_id, status) VALUES (0, 'Otro Status');
+	
 	REPLACE status SET status_id = 0, status = 'Otro Status';
 
 	/*Eliminar status*/
