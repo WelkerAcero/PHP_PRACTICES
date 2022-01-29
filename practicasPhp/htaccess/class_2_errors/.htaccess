@@ -1,0 +1,2 @@
+Options All -Indexes
+ErrorDocument 404 /practicasPhp/htaccess/class_2_errors/404.html

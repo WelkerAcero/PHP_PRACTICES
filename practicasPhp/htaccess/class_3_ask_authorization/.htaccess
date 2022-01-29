@@ -1,0 +1,4 @@
+AuthName "Authorization required"
+AuthUserFile C:\xampp\htdocs\practicasPhp\htaccess\class_3_ask_authorization\.htpasswd
+AuthType Basic
+require user Welker

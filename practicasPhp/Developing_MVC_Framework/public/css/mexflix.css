@@ -1,0 +1,68 @@
+html {
+    background-color: #141414;
+    color: #FFF;
+
+}
+
+input, textarea, select {
+    color: #141414;    
+}
+
+table{
+    width: 100%;
+    color: #141414;
+}
+
+table td, table th {
+    padding: .25rem;
+}
+
+/* The firts row going to be the header of the rows */
+table tr:first-child { 
+    background-color: #E50914;
+    color: #FFF;
+}
+
+/*Pair rows going to have certain styles 'even = pares'*/
+table tr:nth-child(even){
+    background-color: #666;
+}
+
+/*Not pair rows going to have certain styles  'odd = impares'*/
+/* :not(:first-child) = exepto a la primera porque ya tiene su estilo */
+table tr:nth-child(odd):not(:first-child){
+    background-color: #999;
+}
+
+.logo{
+    font-size: 3rem;
+    color:#E50914;
+}
+
+.menu a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #E50914;
+}
+
+.menu a:hover{
+    transition: 0.5s;
+    color: #FFF;
+}
+
+.button {
+    padding: .5rem 1rem; /* Up, down and sides */
+    background-color:#E50914;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.button:hover{
+    opacity: .75;
+}
+
+.add { background-color: #0B0;}
+
+.edit { background-color: #0871b2;}
+
+.delete { background-color: #D23641;}
