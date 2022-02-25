@@ -1,16 +1,20 @@
 <?php
 
-class StatusController{
+class StatusController {
 
     private $model; //this will invoke or initialize our class StatusModel
 
-    public function __contruct(){
+    public function __construct(){
         $this->model = new StatusModel();//Controller's archive is calling StatusModel
                                         // this part create the instance
     }
 
     public function set($status_data = array()){
         return $this->model->set($status_data);
+    }
+
+    public function update($status_data = array()){
+        return $this->model->update($status_data);
     }
 
     public function get($status_id = ''){
@@ -21,12 +25,5 @@ class StatusController{
         return $this->model->del($status_id);
     }
 
-    public function __destruct()
-    {
-        unset($this->model);
-    }
 
 }
-
-
-?>

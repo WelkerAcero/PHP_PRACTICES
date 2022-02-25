@@ -36,10 +36,13 @@ if(isset($_GET['error'])){// if there is a GET URL called 'error' defined. This 
         <p class="item error">%s</p>
     </div>
     ';
+
+    printf($template, $_GET['error']);
+
 }
 
 
-printf($template, $_GET['error']);
+
 
 
 ?>

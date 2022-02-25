@@ -43,12 +43,65 @@ class Router
 
                 case 'status':
 
-                    $controller->load_view('status');
+                    if (!isset($_POST['r'])) $controller->load_view('status');
+                    elseif ($_POST['r'] == 'status_add') $controller->load_view('status_add');
+                    elseif ($_POST['r'] == 'status_edit') $controller->load_view('status_edit');
+                    elseif ($_POST['r'] == 'status_delete') $controller->load_view('status_delete');
+
                     break;
 
                 case 'profile':
 
                     $controller->load_view('profile');
+
+                    if (isset($_POST['r']) && $_POST['r'] == 'verification') {
+
+                        $controller->load_view('verification');
+                    }
+
+                    if (isset($_POST['r']) && $_POST['r'] == 'editProfile') {
+
+                        if (md5($_POST['current_password']) == $_SESSION['pass']) {
+                            $controller->load_view('editProfile');
+                            $_SESSION['passVerified'] = true;
+                        } else {
+                            print('
+                                <div class="container" style="text-align:center">
+                                    <h2 class="item add" style="background-color:yellow; color:black;">
+                                        Wrong password!
+                                    </h2>
+                                </div>
+                                <script>
+                                    window.onload = function(){
+                                        reloadPage("profile");
+                                    }
+                                </script>
+                            ');
+                        }
+                    }
+
+                    if (isset($_POST['edit_user']) && isset($_POST['edit_name']) && isset($_POST['edit_email']) && isset($_POST['edit_birthday']) && isset($_POST['edit_pass']) && isset($_POST['edit_role'])) {
+
+                        $user_data = array(
+                            'user' => $_POST['edit_user'],
+                            'email' => $_POST['edit_email'],
+                            'name' => $_POST['edit_name'],
+                            'birthday' => $_POST['edit_birthday'],
+                            'pass' => $_POST['edit_pass'],
+                            'role' => $_POST['edit_role'],
+                        );
+
+
+                        $session = new SessionController();
+                        $session->set($user_data);
+
+                        print('
+                        <script>
+                            alert("Data edited successfully");
+                        </script>'
+                        );
+                    }
+
                     break;
 
                 case 'salir':
@@ -90,18 +143,18 @@ class Router
                         print('
                         <script>
                             alert("User successfully created.");
+                            window.onload = function(){
+                                reloadPage("login");
+                            }
                         </script>
                         ');
-                        
                     }
-
                 } else {
 
                     $login_form = new ViewController();
                     $login_form->load_view('login');
-
                 }
-                
+
             } else {
 
                 $user_session = new SessionController();

@@ -6,8 +6,8 @@ abstract class Model{
     private static $db_user = "root";
     private static $db_pass = "";
     private static $db_name = 'mexflix';
-
     private static $db_charset = 'utf8';
+
     private $conn;
 
     protected $query;
@@ -44,7 +44,7 @@ abstract class Model{
 
         //http://php.net/manual/es/mysqli.query.php
         //THIS IS NOT THE PROTECTED ATTRIBUTE query(), 
-        $this->conn->query($this->query);// the word 'query' used IS A INNER PHP METHOD .
+        $this->conn->query($this->query);// the part 'conn->'query' used IS A INNER PHP METHOD .
         
         $this->db_close(); //METHOD db_close()
     }

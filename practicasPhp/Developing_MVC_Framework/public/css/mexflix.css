@@ -1,7 +1,7 @@
 html {
     background-color: #141414;
     color: #FFF;
-
+    font-size:15px;
 }
 
 input, textarea, select {
@@ -66,3 +66,7 @@ table tr:nth-child(odd):not(:first-child){
 .edit { background-color: #0871b2;}
 
 .delete { background-color: #D23641;}
+
+.Logos{
+    justify-content: space-between;
+}

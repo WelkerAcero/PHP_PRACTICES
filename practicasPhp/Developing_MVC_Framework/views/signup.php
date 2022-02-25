@@ -15,7 +15,7 @@
     </div>
 
     <div class="item">
-        <p>Your users</p>
+        <p>Your username</p>
         <input type="text" name="user_signup" placeholder="Write your user" required>
     </div>
 
@@ -33,17 +33,3 @@
         <input class="button" type="submit" value="Send">
     </div>
 </form>
-
-<?php
-    if (!empty($_POST['user']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['role'])) {
-
-        $user_data = array(
-            "user" => $_POST['user_signup'],
-            "email" => $_POST['email_signup'],
-            "name" => $_POST['name_signup'],
-            "birthday" => $_POST['birthday_signup'],
-            "pass" => $_POST['password_signup'],
-            "role" => $_POST['role_signup'],
-        );
-    }
-?>

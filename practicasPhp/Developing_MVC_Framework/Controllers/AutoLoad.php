@@ -5,6 +5,7 @@ class AutoLoad {
     public function __construct(){
 
         spl_autoload_register(function($className){
+            
             //punto diagonal para indicar donde esta el archivo, el cual es Index.php
             $models_path = './Models/' . $className . '.php';
             $controllers_path = './Controllers/' . $className . '.php';

@@ -1,25 +1,64 @@
-<h2>Status</h2>
+<?php
+print('<h2>Status</h2><br>');
+print('<h2 class="p1">Manage your Status</h2>');
 
-<div class="p1">
-    <h5>Search</h5>
-    <input type="text" placeholder="Indique el nombre">
+$status_controller = new StatusController();
+$status = $status_controller->get();
 
-    <table>
+if (empty($status)) {
+    print('
+        <div class="container">
+                <p class="item error">No hay Status</p>
+        </div>
+    ');
 
-        <tr>
-            <td>Status_id</td>
-            <td>Status</td>
-        </tr>
+} else {
 
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
+    $template_status = '
+    <div class="item">
+        <table class="">
+            <tr>
+                <th>Status_id</th>
+                <th>Status</th>
+                <th colspan="2">
+                    <form method="post" action="">
+                        <input type="text" hidden name="r" value="status_add">
+                        <input class="button add" type="submit" value="Add">
+                    </form>
+                </th>
+            </tr>';
 
-    </table>
-    <input type="button" class="button" value="Send">
-    <input type="button" class="button add" value="Add">
-    <input type="button" class="button edit" value="Edit">
-    <input type="button" class="button delete" value="Delete">
+    for ($i = 0; $i < count($status); $i++) {
 
-</div>
+        $template_status .= '
+            <tr>
+                <td>'.$status[$i]['status_id'].'</td>
+                <td>'.$status[$i]['status'].'</td>
+                <td>
+                    <form method="post" action="">
+                        <input type="hidden" name="r" value="status_edit">
+                        <input type="hidden" name="status_id" value="'.$status[$i]['status_id'].'">
+                        <input class="button edit" type="submit" value="Edit">
+                    </form>
+                </td>
+
+                <td>
+                    <form method="post" action="">
+                        <input type="hidden" name="r" value="status_delete">
+                        <input type="hidden" name="status_id" value="'.$status[$i]['status_id'].'">
+                        <input type="hidden" name="status_name" value="'.$status[$i]['status'].'">
+                        <input class="button delete" type="submit" value="Delete">
+                    </form>
+                </td>
+            
+            </tr>
+        ';
+    }
+
+    $template_status .='
+        </table>
+    </div>
+    ';
+
+    print($template_status);
+}

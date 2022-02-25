@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,38 +11,46 @@
     <!-- Using a libreria criollita del man -->
     <link rel="stylesheet" href="./public/css/responsimple.min.css">
     <link rel="stylesheet" href="./public/css/mexflix.css">
-    <script src="./librerias/jquery-3.6.0.min.js"></script>
-
+    <script src="./public/js/app.js"></script>
 </head>
 
 <body>
     <header class="container center header">
 
-        <div class="item i-b v-middle ph12 lg2">
-            <h1><a class="logo" style="text-decoration:none" href="login">Mexflix</a></h1>
+        <div class="item md-flex lg-jc-space-between">
+
+            <div class="item i-b lg2" style="margin-top:1.8%;">
+                <h1><a class="logo" style="text-decoration:none;" href="./">Mexflix</a></h1>
+            </div>
+
+            <nav class="item i-b v-middle ph12 lg10 lg-right menu">
+                <ul class="container">
+                    <?php if ($_SESSION['active']) { ?>
+                        <li class="nobullet item inline v-middle"><a href="movieseries">Movie series</a></li>
+                        <li class="nobullet item inline v-middle"><a href="users">Users</a></li>
+                        <li class="nobullet item inline v-middle"><a href="status">Status</a></li>
+                        <li class="nobullet item inline v-middle"><a href="profile">My profile</a></li>
+                        <li class="nobullet item inline v-middle"><a href="salir">Logout</a></li>
+                        
+                        <div class="item i-b lg2">
+                            <img src="./public/img/HTML-404-Error-Page.gif" width="300px" alt="My profile logo" class="v-middle">
+                        </div>
+                    <?php
+
+                    } else {
+
+                    ?>
+                        <li class="nobullet item inline"><a href="signup">Signup</a></li>
+                    <?php
+                    }
+                    ?>
+
+                </ul>
+            </nav>
+            
         </div>
 
-        <nav class="item i-b v middle ph12 lg10 lg-right menu">
-            <ul class="container">
-                <?php if ($_SESSION['active']) { ?>
-                    <li class="nobullet item inline"><a href="movieseries">Movie series</a></li>
-                    <li class="nobullet item inline"><a href="users">Users</a></li>
-                    <li class="nobullet item inline"><a href="status">Status</a></li>
-                    <li class="nobullet item inline"><a href="profile">My profile</a></li>
-                    <li class="nobullet item inline"><a href="salir">Logout</a></li>
 
-                <?php
-
-                } else {
-
-                ?>
-                    <li class="nobullet item inline"><a href="signup">Signup</a></li>
-                <?php
-                }
-                ?>
-
-            </ul>
-        </nav>
     </header>
 
     <main class="container main">

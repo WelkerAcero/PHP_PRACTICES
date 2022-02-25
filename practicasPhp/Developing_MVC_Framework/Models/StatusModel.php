@@ -1,14 +1,15 @@
 <?php
 
-class StatusModel extends Model{
+class StatusModel extends Model {
 
     public function set($status_data = array()){
-        
-        foreach($status_data as $key => $value){
-            $$key = $value; //When $$ is assigned it turns into a dynamic variable
+
+        foreach ($status_data as $key => $value) {
+            $$key = $value;
         }
 
-        $this->query = ("REPLACE INTO status(status_id, status) VALUES('$status_id','$status')");
+        $this->query = "REPLACE INTO status(status_id, status) 
+        VALUES('$status_id','$status')";
 
         $this->set_query(); //Execute the query in the Model
     }
@@ -16,7 +17,7 @@ class StatusModel extends Model{
     public function get($status_id = ''){
 
         $this->query = ($status_id != '') 
-        ?"SELECT * FROM status WHERE status_id = $status_id"
+        ?"SELECT * FROM status WHERE status_id = '$status_id'"
         :"SELECT * FROM status";
         
         $this->get_query(); //$this->get_query()  A protected function from the father class
@@ -35,6 +36,17 @@ class StatusModel extends Model{
         return $data;
 
     }   
+
+    public function update($status_data = array()){
+
+        foreach ($status_data as $key => $value) {
+            $$key = $value;
+        }
+
+        $this->query = ("UPDATE status SET status_id = $status_id, status = '$status' WHERE status_id = $status_id");
+
+        $this->set_query(); //Execute the query in the Model
+    }
 
     public function del($status_id = ''){
         if(!isset($status_id)){
