@@ -53,7 +53,7 @@ abstract class Model{
     protected function get_query(){ 
         $this->db_open();//Open the connection
         
-        $result = $this->conn->query($this->query);//Bring the query proceesed and saved in a variable
+        $result = $this->conn->query($this->query);//Bring the query processed and saved in a variable
         while($this->rows[] = $result->fetch_assoc());
         //fetch_assoc = this going to return records from a query invoking the name of the field in database
         $result->close();

@@ -119,8 +119,6 @@ class Router
 
             if (!isset($_POST['user']) && !isset($_POST['pass'])) {
 
-                $inSignup = false;
-
                 if ($route == 'signup') {
 
                     $signup = new ViewController();

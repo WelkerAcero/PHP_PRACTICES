@@ -11,7 +11,7 @@ class Producto
     public $categoria = array();
     public $precio = 0.0;
 
-    public function __construct(Categoria $categoria)
+    public function __construct(Categoria $categoria) 
     {
         $this->categoria = $categoria;
     }

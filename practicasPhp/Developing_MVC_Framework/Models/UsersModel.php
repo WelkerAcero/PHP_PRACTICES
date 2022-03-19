@@ -8,7 +8,7 @@ class UsersModel extends Model{
             $$key = $value; //When $$ is assigned it turns into a dynamic variable
         }
 
-  /*       $Fecha = new DateTime();
+        /*$Fecha = new DateTime();
         $img = ($profileImg != "") ? $Fecha->getTimestamp() . "_" . $_FILES["profileImg"]["name"] : "imagen.png";
         
         $tmpFoto = $_FILES["profileImg"]["tmp_name"];

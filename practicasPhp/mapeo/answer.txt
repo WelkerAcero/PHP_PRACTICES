@@ -1,0 +1,8 @@
+
+$fechas = array();
+
+for($i = 0; $i < count($data); $i++){
+    array_push($fechas,$data[$i]['fecha_nacimiento']);
+}
+
+print_r($fechas);
